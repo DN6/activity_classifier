@@ -1,4 +1,9 @@
-# To Run
+# To Train
 ```
-  python main.py --config <path to JSON config file>
+  python train.py --config <path to JSON config file>
+```
+
+# To Evaluate
+```
+  python evaluate.py --config <path to JSON config file>
 ```
