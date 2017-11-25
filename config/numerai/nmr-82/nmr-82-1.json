@@ -1,0 +1,37 @@
+{
+    "name": "nmr-82",
+    "data": "./data/numerai/",
+    "training": {
+        "file": "numerai_training_data.csv",
+        "parameters": [
+            {
+                "classifier": "mlp",
+                "grid": {
+                    "classifier__activation": [
+                        "relu"
+                    ],
+                    "classifier__hidden_layer_sizes": [
+                        [
+                            20,
+                            10,
+                            5,
+                            2
+                        ]
+                    ],
+                    "classifier__solver": [
+                        "lbfgs"
+                    ]
+                }
+            }
+        ]
+    },
+    "evaluate": {
+        "file": "numerai_tournament_data.csv",
+        "models": [
+            "mlp"
+        ]
+    },
+    "labels": "target",
+    "model_path": "./models/",
+    "model_no": 3
+}

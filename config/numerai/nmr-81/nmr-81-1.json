@@ -1,0 +1,35 @@
+{
+    "name": "nmr-81",
+    "data": "./data/numerai/",
+    "training": {
+        "file": "numerai_training_data.csv",
+        "parameters": [
+            {
+                "classifier": "logreg",
+                "grid": {
+                    "classifier__penalty": [
+                        "l2"
+                    ],
+                    "classifier__C": [
+                        0.1
+                    ],
+                    "classifier__solver": [
+                        "sag"
+                    ],
+                    "classifier__n_jobs": [
+                        -1
+                    ]
+                }
+            }
+        ]
+    },
+    "evaluate": {
+        "file": "numerai_tournament_data.csv",
+        "models": [
+            "logreg"
+        ]
+    },
+    "labels": "target",
+    "model_path": "./models/",
+    "model_no": 1
+}

@@ -11,11 +11,7 @@ def get_args():
     return parser.parse_args()
 
 def preprocess(conf):
-    raw_data = "%s/raw/numerai_training_data.csv"
-    tournament_data = "%s/raw/numerai_tournament_data.csv"
-
-    data = utils.get_data(conf.get("data"))
-
+    data = utils.data()
 
 
 
