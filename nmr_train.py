@@ -29,10 +29,8 @@ def get_args():
     return parser.parse_args()
 
 
-def train(conf):
-    path = "%s/%s/%s" % (conf.get("data"),
-                         conf.get("name"),
-                         conf.get("training").get("file"))
+def train(conf, filename):
+    path = "%s/%s" % (conf.get("data"), filename)
 
     data = utils.load_data(path)
 
@@ -61,7 +59,7 @@ def main():
     args = get_args()
     conf = get_config(args.config)
 
-    train(conf)
+    #train(conf)
 
 
 if __name__ == '__main__':

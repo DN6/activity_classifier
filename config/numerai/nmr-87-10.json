@@ -1,0 +1,34 @@
+{
+    "model_no": "10",
+    "labels": "target",
+    "name": "nmr-87",
+    "data": "./data/numerai",
+    "training": {
+        "parameters": [
+            {
+                "classifier": "mlp",
+                "grid": {
+                    "classifier__activation": [
+                        "relu"
+                    ],
+                    "classifier__solver": [
+                        "adam"
+                    ],
+                    "classifier__hidden_layer_sizes": [
+                        [
+                            30,
+                            20,
+                            10
+                        ]
+                    ]
+                }
+            }
+        ]
+    },
+    "evaluate": {
+        "models": [
+            "mlp"
+        ]
+    },
+    "model_path": "./models/"
+}

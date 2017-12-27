@@ -1,8 +1,9 @@
 {
-    "name": "nmr-82",
-    "data": "./data/numerai/",
+    "model_no": "2",
+    "labels": "target",
+    "name": "nmr-87",
+    "data": "./data/numerai",
     "training": {
-        "file": "numerai_training_data.csv",
         "parameters": [
             {
                 "classifier": "mlp",
@@ -10,28 +11,24 @@
                     "classifier__activation": [
                         "relu"
                     ],
+                    "classifier__solver": [
+                        "adam"
+                    ],
                     "classifier__hidden_layer_sizes": [
                         [
+                            30,
                             20,
-                            10,
-                            5,
-                            2
+                            10
                         ]
-                    ],
-                    "classifier__solver": [
-                        "lbfgs"
                     ]
                 }
             }
         ]
     },
     "evaluate": {
-        "file": "numerai_tournament_data.csv",
         "models": [
             "mlp"
         ]
     },
-    "labels": "target",
-    "model_path": "./models/",
-    "model_no": 3
+    "model_path": "./models/"
 }

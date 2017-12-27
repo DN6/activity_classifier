@@ -13,8 +13,6 @@ from sklearn.externals import joblib
 from sklearn import linear_model
 from sklearn import preprocessing
 
-from sklearn.decomposition import PCA
-
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 
@@ -96,16 +94,8 @@ def get_selector(selector, estimator):
     }.get(selector)
 
 
-def get_transformation(transformation):
-    return {
-        "pca": PCA(),
-        "none": None
-    }.get(transformation)
-
-
 def make_pipeline(conf):
     return Pipeline([
-        ('transformation', get_transformation(conf.get("transformation"))),
         ('classifier', get_classifier(conf.get("classifier")))
     ])
 
